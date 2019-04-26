@@ -1,3 +1,4 @@
+#/usr/env/bin sh
 dpkg --add-architecture i386
 apt update
 apt install automake autoconf libtool make gettext lzip
