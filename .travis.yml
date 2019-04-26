@@ -1,4 +1,4 @@
-dist: xenial
+dist: trusty
 language: cpp
 install: 
   - sudo dpkg --add-architecture i386
