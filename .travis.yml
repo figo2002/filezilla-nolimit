@@ -4,4 +4,4 @@ install:
   - sudo dpkg --add-architecture i386
   - sudo apt-get update
   - sudo apt-get install -y automake autoconf libtool make gettext lzip
-  - sudo apt-get install -y mingw-w64 pkg-config wx-common wine wine32 subversion gi
+  - sudo apt-get install -y mingw-w64 pkg-config wx-common wine-stable subversion git
