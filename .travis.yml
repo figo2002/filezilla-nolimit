@@ -1,2 +1,3 @@
 dist: xenial
 language: cpp
+install: ./build_env.sh
