@@ -1,5 +1,11 @@
 dist: xenial
 language: cpp
+env:
+  global:
+  - PATH="$HOME/prefix/bin:$PATH"
+  - LD_LIBRARY_PATH="$HOME/prefix/lib:$LD_LIBRARY_PATH"
+  - PKG_CONFIG_PATH="$HOME/prefix/lib/pkgconfig:$PKG_CONFIG_PATH"
+  - TARGET_HOST=x86_64-w64-mingw32
 install: 
   - sudo dpkg --add-architecture i386
   - sudo apt-get update
