@@ -14,3 +14,57 @@ cd gmp-6.1.2
 --enable-shared --enable-fat
 make
 make install
+
+cd ~/src
+wget https://ftp.gnu.org/gnu/nettle/nettle-3.4.1.tar.gz
+tar xf nettle-3.4.1.tar.gz
+cd nettle-3.4.1
+./configure --host=$TARGET_HOST --prefix="$HOME/prefix" --enable-shared 
+--disable-static --enable-fat LDFLAGS="-L$HOME/prefix/lib" 
+CPPFLAGS="-I$HOME/prefix/include"
+make
+make install
+
+
+cd ~/src
+wget https://www.gnupg.org/ftp/gcrypt/gnutls/v3.6/gnutls-3.6.6.tar.xz
+tar xvf gnutls-3.6.6.tar.xz
+cd gnutls-3.6.6
+./configure --host=$TARGET_HOST --prefix="$HOME/prefix" --enable-shared 
+--disable-static --with-included-libtasn1 --without-p11-kit 
+--disable-doc --enable-local-libopts --with-included-unistring 
+GMP_LIBS="-L$HOME/prefix/lib -lgmp" GMP_CFLAGS="-I$HOME/prefix/include"
+make
+make install
+
+
+cd ~/src
+wget https://sqlite.org/2018/sqlite-autoconf-32600-00.tar.gz
+tar xvzf sqlite-autoconf-3260000.tar.gz
+cd sqlite-autoconf-3260000
+./configure --host=$TARGET_HOST --prefix="$HOME/prefix" --enable-shared 
+--disable-static --disable-dynamic-extensions
+make
+make install
+
+cd ~/src
+git clone --branch WX_3_0_BRANCH --single-branch 
+https://github.com/wxWidgets/wxWidgets.git wx3
+cd wx3
+./configure --host=$TARGET_HOST --prefix="$HOME/prefix" --enable-shared 
+--disable-static
+make
+make install
+
+
+cd ~/src
+svn co https://svn.filezilla-project.org/svn/libfilezilla/tags/0.15.1 
+lfz
+cd lfz
+autoreconf -i
+./configure --host=$TARGET_HOST --prefix="$HOME/prefix" --enable-shared 
+--disable-static 
+make
+make install
+cp $HOME/prefix/lib/wx*.dll $HOME/prefix/bin
+

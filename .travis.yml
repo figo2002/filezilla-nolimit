@@ -7,3 +7,6 @@ install:
   - sudo apt-get install -y mingw-w64 pkg-config wx-common subversion git
   - sudo chmod +x ./deps.sh
   - ./deps.sh
+build:
+  - sudo chmod +x ./build.sh
+  - ./build.sh
