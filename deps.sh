@@ -58,8 +58,7 @@ make install
 
 
 cd ~/src
-svn co https://svn.filezilla-project.org/svn/libfilezilla/tags/0.15.1 
-lfz
+svn co https://svn.filezilla-project.org/svn/libfilezilla/tags/0.15.1 lfz
 cd lfz
 autoreconf -i
 ./configure --host=$TARGET_HOST --prefix="$HOME/prefix" --enable-shared 
