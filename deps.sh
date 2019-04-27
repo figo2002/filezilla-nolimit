@@ -43,8 +43,7 @@ make
 make install
 
 cd ~/src
-git clone --branch WX_3_0_BRANCH --single-branch 
-https://github.com/wxWidgets/wxWidgets.git wx3
+git clone --branch WX_3_0_BRANCH --single-branch https://github.com/wxWidgets/wxWidgets.git wx3
 cd wx3
 ./configure --host=$TARGET_HOST --prefix="$HOME/prefix" --enable-shared --disable-static
 make
