@@ -2,8 +2,7 @@
 
 cd filezilla-nolimit
 autoreconf -i
-./configure --host=$TARGET_HOST --prefix="$HOME/prefix" --enable-shared 
---disable-static --with-pugixml=builtin
+./configure --host=$TARGET_HOST --prefix="$HOME/prefix" --enable-shared --disable-static --with-pugixml=builtin
 make
 # strip debug symbols
 $TARGET_HOST-strip src/interface/.libs/filezilla.exe
