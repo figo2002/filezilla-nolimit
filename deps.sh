@@ -61,8 +61,7 @@ cd ~/src
 svn co https://svn.filezilla-project.org/svn/libfilezilla/tags/0.15.1 lfz
 cd lfz
 autoreconf -i
-./configure --host=$TARGET_HOST --prefix="$HOME/prefix" --enable-shared 
---disable-static 
+./configure --host=$TARGET_HOST --prefix="$HOME/prefix" --enable-shared --disable-static 
 make
 make install
 cp $HOME/prefix/lib/wx*.dll $HOME/prefix/bin
